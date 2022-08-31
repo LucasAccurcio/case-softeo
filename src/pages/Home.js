@@ -1,9 +1,15 @@
-import React from 'react';
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Home.css';
 
 const Home = () => {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (localStorage.getItem('service') === null) {
+      localStorage.setItem('service', JSON.stringify([]));
+    }
+  },[])
 
   return (
     <div className='home-container'>
