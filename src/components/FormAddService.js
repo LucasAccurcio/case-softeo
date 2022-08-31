@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { validateName, validateTreatment, validateValue } from "../utils/Validations";  
+import { validateName, validateTreatment, validateValue } from "../utils/Validations";
+import saveNewService from "../utils/SaveNewService";
 import './FormAddService.css';
 
 const INITIAL_SERVICE = {
@@ -39,15 +40,14 @@ const FormAddService = () => {
       && validateTreatment(service.treatment) === ''
       && validateValue(service.value) === ''
     ) {
-      localStorage.setItem('service', JSON
-        .stringify([...JSON.parse(localStorage.getItem('service')), service]));
+      saveNewService(service);
       setService(INITIAL_SERVICE);
       setMessage({ ...message, sucess: 'Serviço cadastrado com sucesso!' });
     }
   }
 
   const paymentMethods = ['Dinheiro', 'Cartão de crédito', 'Cartão de débito', 'Pix', 'Transferência bancária'];
-  const formsOfPayment = ['À vista', '2x', '3x', '4x', '5x', '6x', '7x', '8x', '9x', '10x'];
+  const formsOfPayment = ['À vista', '2x', '3x', '4x', '5x'];
 
   useEffect(() => {
     const validateForm = () => {
@@ -145,11 +145,14 @@ const FormAddService = () => {
               onChange={ handleChange }
             >
               <option value="">Selecione o método de pagamento</option>
-              { formsOfPayment.map((formOfPayment) => (
+              { service.paymentMethod === 'Cartão de crédito' ? (
+                formsOfPayment.map((formOfPayment) => (
                 <option key={ formOfPayment } value={ formOfPayment }>
                   { formOfPayment }
                 </option>
-                )) }
+                ))) : (
+                  <option value="À vista">À vista</option>
+                )}
             </select>
           </label>
 
