@@ -1,4 +1,5 @@
 const saveNewService = (service) => {
+  service = { ...service, totalValue: parseFloat(service.value).toFixed(2) };
   if (service.paymentMethod !== 'Cartão de crédito' || service.formOfPayment === 'À vista') {
     localStorage.setItem('service', JSON
     .stringify([...JSON.parse(localStorage.getItem('service')), service]));
@@ -6,7 +7,7 @@ const saveNewService = (service) => {
     let installment = service.formOfPayment.split('x', 1);
     installment = parseInt(installment[0]);
 
-    let valueInstallment = service.value / installment;
+    let valueInstallment = (parseFloat(service.value) / installment).toFixed(2);
     service.value = valueInstallment;
 
     let dateFirstPayment = new Date(service.paymentDate);
