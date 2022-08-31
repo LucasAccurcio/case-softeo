@@ -1,9 +1,11 @@
-import React from 'react';
+import FormAddService from '../components/FormAddService';
+import Navbar from '../components/NavBar';
 
 const Service = () => {
   return (
     <div>
-      Página de serviço
+      <Navbar title="Cadastrar serviço" />
+      <FormAddService />
     </div>
   );
 }
