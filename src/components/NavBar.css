@@ -1,11 +1,10 @@
 .navbar-container {
+  align-items: center;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  
-  width: 100%;
   height: 5vh;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .empty-button {
@@ -17,6 +16,14 @@
 }
 
 .return-button {
+  background-color: #252525;
+  border: none;
+  color: white;
+  height: 100%;
+  width: 10vw;
+}
+
+.add-button {
   background-color: #252525;
   border: none;
   color: white;
