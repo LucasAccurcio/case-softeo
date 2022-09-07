@@ -1,9 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import Context from '../context/Context';
 import './FilterPayments.css';
 
 const FilterPayments = () => {
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
+  const { setFilter } = useContext(Context);
 
   const handleChange = ({ target: { name, value } }) => {
     if (name === 'startDate') {
@@ -11,6 +13,11 @@ const FilterPayments = () => {
     } else {
       setEndDate(value);
     }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setFilter({startDate, endDate});
   };
 
   useEffect(() => {
@@ -26,13 +33,10 @@ const FilterPayments = () => {
       end = end.toJSON().split('T');
       end = end[0];
       setEndDate(end);
-
-      if (localStorage.getItem('filter') === null) {
-        localStorage.setItem('filter', JSON.stringify({start, end}));
-      }
+      setFilter({start, end});
     }
     initial_dates();
-  }, []);
+  }, [setFilter]);
 
   return (
     <section>
@@ -58,7 +62,7 @@ const FilterPayments = () => {
             onChange={ handleChange }
             />
         </label>
-        <button className="filter-payments__button__button">Filtrar</button>
+        <button className="filter-payments__button__button" onClick={ handleSubmit }>Filtrar</button>
       </div>
     </section>
   );
