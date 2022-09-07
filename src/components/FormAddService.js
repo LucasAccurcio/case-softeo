@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
-import { validateName, validateTreatment, validateValue } from "../utils/Validations";
-import saveNewService from "../utils/SaveNewService";
+import { useEffect, useState } from 'react';
+import { validateName, validateTreatment, validateValue } from '../utils/Validations';
+import saveNewService from '../utils/SaveNewService';
 import './FormAddService.css';
 
 const INITIAL_SERVICE = {
