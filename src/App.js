@@ -1,14 +1,14 @@
 import Router from './router/Router';
 import './App.css';
-import { BrowserRouter } from 'react-router-dom';
+import Provider from './context/Provider';
 
 function App() {
   return (
-    <BrowserRouter>
+    <Provider>
       <div className="App">
         <Router />
       </div>
-    </BrowserRouter>
+    </Provider>
   );
 }
 
