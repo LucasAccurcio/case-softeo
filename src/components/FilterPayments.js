@@ -5,7 +5,7 @@ import './FilterPayments.css';
 const FilterPayments = () => {
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
-  const { setFilter } = useContext(Context);
+  const { setFilter, setLoading } = useContext(Context);
 
   const handleChange = ({ target: { name, value } }) => {
     if (name === 'startDate') {
@@ -18,6 +18,7 @@ const FilterPayments = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setFilter({startDate, endDate});
+    setLoading(true);
   };
 
   useEffect(() => {
@@ -33,10 +34,11 @@ const FilterPayments = () => {
       end = end.toJSON().split('T');
       end = end[0];
       setEndDate(end);
-      setFilter({start, end});
+      setFilter({"startDate": start, "endDate": end});
+      setLoading(true);
     }
     initial_dates();
-  }, [setFilter]);
+  }, [setFilter, setLoading]);
 
   return (
     <section>

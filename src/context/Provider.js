@@ -4,10 +4,13 @@ import Context from './Context';
 
 const Provider = ({ children }) => {
   const [filter, setFilter] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const context = {
     filter,
     setFilter,
+    loading,
+    setLoading,
   };
 
   return <Context.Provider value={ context }>{children}</Context.Provider>;
