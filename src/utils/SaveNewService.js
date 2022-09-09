@@ -10,13 +10,21 @@ const saveNewService = (service) => {
     let valueInstallment = (parseFloat(service.value) / installment).toFixed(2);
     service.value = valueInstallment;
 
-    let dateFirstPayment = new Date(service.paymentDate);
+    let date = service.paymentDate.split('-');
+    let dateFirstPayment = new Date(date[0], date[1] - 1, date[2]);
 
     for (let i = 0; i < installment; i += 1) {
       service.paymentDate = dateFirstPayment.toLocaleDateString();
+      
       localStorage.setItem('service', JSON
       .stringify([...JSON.parse(localStorage.getItem('service')), service]));
+      
+      const month = dateFirstPayment.getMonth();
       dateFirstPayment.setDate(dateFirstPayment.getDate() + 30);
+
+      if (month === dateFirstPayment.getMonth()) {
+        dateFirstPayment.setDate(dateFirstPayment.getDate() + 1);
+      }
     }
   }
 }
