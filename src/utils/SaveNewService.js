@@ -1,6 +1,11 @@
+import { convertISODateToDate } from './ConvertDate';
+
 const saveNewService = (service) => {
   service = { ...service, totalValue: parseFloat(service.value).toFixed(2) };
+  let date = convertISODateToDate(service.paymentDate);
+  
   if (service.paymentMethod !== 'Cartão de crédito' || service.formOfPayment === 'À vista') {
+    service.paymentDate = date.toLocaleDateString('pt-BR');
     localStorage.setItem('service', JSON
     .stringify([...JSON.parse(localStorage.getItem('service')), service]));
   } else {
@@ -10,11 +15,10 @@ const saveNewService = (service) => {
     let valueInstallment = (parseFloat(service.value) / installment).toFixed(2);
     service.value = valueInstallment;
 
-    let date = service.paymentDate.split('-');
-    let dateFirstPayment = new Date(date[0], date[1] - 1, date[2]);
+    let dateFirstPayment = date;
 
     for (let i = 0; i < installment; i += 1) {
-      service.paymentDate = dateFirstPayment.toLocaleDateString();
+      service.paymentDate = dateFirstPayment.toLocaleDateString('pt-BR');
       
       localStorage.setItem('service', JSON
       .stringify([...JSON.parse(localStorage.getItem('service')), service]));
