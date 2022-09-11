@@ -69,12 +69,13 @@ const FormAddService = () => {
 
   return (
     <div>
-      <form>
+      <form className='form-add-service__container'>
         <fieldset>
           <legend>Cadastro de serviço</legend>
-          <label htmlFor="fullname">
+          <label className='form-add-service__label' htmlFor="fullname">
           Nome completo do paciente*:
             <input
+              className='form-add-service__input'
               type="text"
               id="fullname"
               placeholder="Digite o nome completo do paciente"
@@ -84,12 +85,13 @@ const FormAddService = () => {
               onFocus={ () => setMessage({ ...message, fullname: '' }) }
               onBlur={ () => setMessage({ ...message, fullname: validateName(service.fullname) }) }
             />
-            <p>{ message.fullname }</p>
+            <p className='form-add-service__p'>{ message.fullname }</p>
           </label>
 
-          <label htmlFor="treatment">
+          <label className='form-add-service__label' htmlFor="treatment">
             Tratamento realizado*:
             <input
+              className='form-add-service__input'
               type="text"
               id="treatment"
               placeholder="Digite o nome do tratamento realizado"
@@ -99,12 +101,13 @@ const FormAddService = () => {
               onFocus={ () => setMessage({ ...message, treatment: '' }) }
               onBlur={ () => setMessage({ ...message, treatment: validateTreatment(service.treatment) }) }
             />
-            <p>{ message.treatment }</p>
+            <p className='form-add-service__p'>{ message.treatment }</p>
           </label>
 
-          <label htmlFor="value">
+          <label className='form-add-service__label' htmlFor="value">
             Valor do tratamento realizado*:
             <input
+              className='form-add-service__input'
               type="number"
               step={0.01}
               min={0}
@@ -116,12 +119,13 @@ const FormAddService = () => {
               onFocus={ () => setMessage({ ...message, value: '' }) }
               onBlur={ () => setMessage({ ...message, value: validateValue(service.value) }) }
             />
-            <p>{ message.value }</p>
+            <p className='form-add-service__p'>{ message.value }</p>
           </label>
 
-          <label htmlFor="paymentMethod">
+          <label className='form-add-service__label' htmlFor="paymentMethod">
             Método de pagamento*:
             <select
+              className='form-add-service__select'
               id="paymentMethod"
               name="paymentMethod"
               value={ service.paymentMethod }
@@ -136,9 +140,10 @@ const FormAddService = () => {
             </select>
           </label>
 
-          <label htmlFor="formOfPayment">
+          <label className='form-add-service__label' htmlFor="formOfPayment">
             Forma de pagamento*:
             <select
+              className='form-add-service__select'
               id="formOfPayment"
               name="formOfPayment"
               value={ service.formOfPayment }
@@ -156,13 +161,25 @@ const FormAddService = () => {
             </select>
           </label>
 
-          <label htmlFor="paymentDate">
+          <label className='form-add-service__label' htmlFor="paymentDate">
             Data de pagamento*:
-            <input type="date" id="paymentDate" name="paymentDate" value={ service.paymentDate } onChange={ handleChange } />
+            <input 
+              className='form-add-service__input'
+              type="date"
+              id="paymentDate"
+              name="paymentDate"
+              value={ service.paymentDate }
+              onChange={ handleChange }
+            />
           </label>
-          <p>{ message.paymentDate }</p>
+          <p className='form-add-service__p'>{ message.paymentDate }</p>
 
-          <button type="submit" onClick={ handleSubmit } disabled={ btnDisabled }>
+          <button
+            className='form-add-service__button'
+            type="submit"
+            onClick={ handleSubmit }
+            disabled={ btnDisabled }
+          >
             Cadastrar Serviço
           </button>
 
