@@ -1,11 +1,12 @@
 import { useContext, useEffect, useState } from 'react';
 import Context from '../context/Context';
 import { convertLocalDateToDate, convertISODateToDate } from '../utils/ConvertDate';
+import './TableReportPayments.css';
 
 const TableReportPayments = () => {
-  const { filter, loading, setLoading } = useContext(Context);
+  const { filter, loading, setLoading, filteredData, setFilteredData } = useContext(Context);
   const [data, setData] = useState([]);
-  const [filteredData, setFilteredData] = useState([]);
+
 
   useEffect(() => {
     const getData = () => {
@@ -27,13 +28,13 @@ const TableReportPayments = () => {
           if (startDate <= dataReport && dataReport <= endDate) {
             return item;
           }
-        }); 
+        }).sort((a, b) => convertLocalDateToDate(a.paymentDate) - (convertLocalDateToDate(b.paymentDate))); 
         setFilteredData([...filterData]);
         setLoading(false);
       }
     }
     filterData();
-  }, [filter, data, setLoading]);
+  }, [filter, data, setLoading, setFilteredData]);
 
   const renderTable = () => (
         <>
@@ -58,6 +59,18 @@ const TableReportPayments = () => {
                 </tr>
               )) }
             </tbody>
+            <tfoot>
+              <tr>
+                <td colSpan="5">
+                  <p>
+                    <strong>
+                      Total a receber / recebido no período: R$&nbsp;
+                      { filteredData.reduce((prev, curr) => prev + parseFloat(curr.value), 0).toFixed(2) }
+                    </strong>
+                  </p>
+                </td>
+              </tr>
+            </tfoot>
           </table>
       </>
     );
