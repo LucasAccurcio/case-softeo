@@ -1,0 +1,8 @@
+.chart-payments-container {
+    border: #a3a2a2 solid 1px;
+    border-radius: 3.5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 5px 10px 3px 10px;
+}
