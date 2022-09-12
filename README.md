@@ -1,6 +1,6 @@
 # Softeo Tecnologia
 
-## Case: Controle de fluxo
+## Case: Controle de fluxo de recebíveis
 
 - Projeto desenvolvido em Javascript e React.
 
