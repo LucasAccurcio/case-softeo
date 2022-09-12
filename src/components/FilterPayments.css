@@ -1,4 +1,13 @@
-section {
+.filter-payments__input {
+  border: none;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin: 8px 0px 2px 0px;
+  padding: 12px 20px;
+  width: 100%;
+}
+
+.filter-payments__container {
   border: #a3a2a2 solid 1px;
   border-radius: 3.5px;
   display: flex;
@@ -7,7 +16,7 @@ section {
   padding: 3px 0;
 }
 
-p {
+.filter-payments__p {
   color: #ffffff;
   font-size: small;
   margin-left: 10px;
@@ -33,10 +42,19 @@ p {
   width: 135px;
 }
 
-input {
+.filter-payments__input {
   font-size: x-small;
+  padding: 15px 20px;
 }
 
-button {
-  height: 2.6rem;
+.filter-payments__button {
+  background-color: #225f6e;
+  border: solid 1px black;
+  border-radius: 10px;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: medium;
+  height: 2.9rem;
+  margin-top: 10px;
+  width: 100%
 }
