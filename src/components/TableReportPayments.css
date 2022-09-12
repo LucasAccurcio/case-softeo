@@ -1,0 +1,43 @@
+.table-report-payments__container {
+  border: #a3a2a2 solid 1px;
+  border-radius: 3.5px;
+  display: flex;
+  flex-direction: column;
+  margin: 5px 10px 20px 10px;
+  padding: 3px 0;
+}
+
+table {
+  vertical-align: middle;
+  padding: 2px;
+}
+
+table thead {
+  font-size: small;
+  text-align: center;
+}
+
+table tbody {
+  font-size: x-small;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+table tr {
+  border-bottom: 1px solid #a3a2a2;
+}
+
+table tr:nth-child(even) {
+  background-color: rgb(51, 51, 51);
+}
+
+table tfoot tr td {
+  background-color: rgb(238, 238, 238);
+  border-radius: 2.5px;
+  }
+
+table tfoot tr td p {
+  color: black;
+  font-size: small;
+  text-align: center;
+}
