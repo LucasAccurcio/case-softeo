@@ -50,7 +50,7 @@ const options = {
 
 return (
   <section className="chart-payments-container">
-    <Chart chartType="ColumnChart" width="100%" height="300px" data={chartData} options={options} />
+    <Chart chartType="ColumnChart" width="100%" height="250px" data={chartData} options={options} />
   </section>
   );
 }

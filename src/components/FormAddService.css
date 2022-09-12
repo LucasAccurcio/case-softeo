@@ -7,6 +7,19 @@
   width: 100%;
 }
 
+.form-add-service__fieldset {
+  border: #a3a2a2 solid 1px;
+  border-radius: 3.5px;
+  text-align: left;
+}
+
+.form-add-service__title {
+    color: #ffffff;
+    font-size: small;
+    margin-left: 10px;
+    text-align: left;
+}
+
 .form-add-service__select {
   border: none;
   border-radius: 5px;
@@ -55,5 +68,11 @@
   color: #3ebada;
   text-align: center;
   padding: 10px;
+}
+
+.form-add-service__alert {
+  color: #ffffff;
+  text-align: left;
+  font-size: small;
 }
 

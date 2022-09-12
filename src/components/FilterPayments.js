@@ -43,32 +43,39 @@ const FilterPayments = () => {
 
   return (
     <section className='filter-payments__container'>
-      <p className='filter-payments__p'>Selecione o período desejado:</p>
-      <div className="filter-payments__date">
-        <label htmlFor="startDate" className="filter-payments__date__label">
-          Data de início:
-          <input
-            className='filter-payments__input'
-            id="startDate"
-            name="startDate"
-            type="date"
-            value={startDate}
-            onChange={ handleChange }
-          />
-          </label>
-        <label htmlFor="endDate" className="filter-payments__date__label">
-          Data final:
-          <input
-            className='filter-payments__input'
-            id="endDate"
-            name="endDate"
-            type="date"
-            value={endDate}
-            onChange={ handleChange }
-            />
-        </label>
-        <button className='filter-payments__button' onClick={ handleSubmit }>Filtrar</button>
-      </div>
+      <fieldset className='filter-payments__fieldset'>
+        <legend className='filter-payments__title'>Selecione o período desejado:</legend>
+        {/* <p className='filter-payments__p'>Selecione o período desejado:</p> */}
+        <div className="filter-payments__date">
+          <div className='filter-payments__content__label'>
+            <label htmlFor="startDate" className="filter-payments__date__label">
+              Data de início:
+              <input
+                className='filter-payments__input'
+                id="startDate"
+                name="startDate"
+                type="date"
+                value={startDate}
+                onChange={ handleChange }
+              />
+              </label>
+            <label htmlFor="endDate" className="filter-payments__date__label">
+              Data final:
+              <input
+                className='filter-payments__input'
+                id="endDate"
+                name="endDate"
+                type="date"
+                value={endDate}
+                onChange={ handleChange }
+                />
+            </label>            
+          </div>
+          <div>
+            <button className='filter-payments__button' onClick={ handleSubmit }>Filtrar</button>
+          </div>
+        </div>
+      </fieldset>
     </section>
   );
 }

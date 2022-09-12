@@ -14,7 +14,7 @@ const Home = () => {
   return (
     <div className='home-container'>
       <main>
-        <h1>Olá Dra. Érica!</h1>
+        <h1 className='home-title'>Olá, Dra. Érica!</h1>
         <br />
         <br />
         <h3>O que gostaria de fazer?</h3>

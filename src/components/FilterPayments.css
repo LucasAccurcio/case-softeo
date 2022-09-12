@@ -8,12 +8,17 @@
 }
 
 .filter-payments__container {
-  border: #a3a2a2 solid 1px;
-  border-radius: 3.5px;
   display: flex;
   flex-direction: column;
   margin: 5px 10px 3px 10px;
   padding: 3px 0;
+}
+
+.filter-payments__fieldset {
+  border: #a3a2a2 solid 1px;
+  border-radius: 3.5px;
+  padding: 10px 0;
+  text-align: left;
 }
 
 .filter-payments__p {
@@ -23,23 +28,36 @@
   text-align: left;
 }
 
+.filter-payments__title {
+  color: #ffffff;
+  font-size: small;
+  margin-left: 10px;
+  text-align: left;
+}
+
 .filter-payments__date {
-  align-items: flex-end;
+  align-items: stretch;
   border-radius: 0.25rem;
   cursor: pointer;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   height: 100%;
   justify-content: space-between;
   padding: 0 0.5rem;
   width: 95%;
 }
 
+.filter-payments__content__label {
+  display: flex;
+  flex-flow: row nowrap;
+  flex-shrink: 1;
+}
+
 .filter-payments__date__label {
   font-size: small;
-  margin: 0 3px;
+  margin: 0 2px;
   text-align: left;
-  width: 135px;
+  width: 50%;
 }
 
 .filter-payments__input {
@@ -56,5 +74,25 @@
   font-size: medium;
   height: 2.9rem;
   margin-top: 10px;
-  width: 100%
+  width: 100%;
+}
+
+@media screen and (min-width: 415px) {
+  .filter-payments__button {
+    width: 100px;
+  }
+
+  .filter-payments__content__label {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .filter-payments__date {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    flex-grow: 1;
+  }
 }

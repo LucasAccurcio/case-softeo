@@ -41,3 +41,31 @@ table tfoot tr td p {
   font-size: small;
   text-align: center;
 }
+
+@media screen and (max-width: 650px) and (min-width: 450px) {
+  table thead {
+    font-size: smaller;
+  }
+
+  table tbody {
+    font-size: smaller;
+  }
+
+  table tfoot tr td p {
+    font-size: smaller;
+  }
+}
+
+@media screen and (min-width: 651px) {
+  table thead {
+    font-size: medium;
+  }
+
+  table tbody {
+    font-size: medium;
+  }
+
+  table tfoot tr td p {
+    font-size: medium;
+  }
+}

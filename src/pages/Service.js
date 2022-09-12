@@ -1,10 +1,11 @@
 import FormAddService from '../components/FormAddService';
 import Navbar from '../components/NavBar';
+import './Home.css';
 
 const Service = () => {
   return (
-    <div>
-      <Navbar title="Cadastrar serviço" />
+    <div className='main-pages-container'>
+      <Navbar title="Serviços" />
       <FormAddService />
     </div>
   );
