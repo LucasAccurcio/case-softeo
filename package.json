@@ -37,6 +37,10 @@
       "last 1 safari version"
     ]
   },
+  "engines": {
+    "node": "v16.14.0",
+    "npm": "8.5.5"
+  },
   "devDependencies": {
     "eslint": "^8.23.0",
     "eslint-config-prettier": "^8.5.0",
