@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import Context from '../context/Context';
 import { convertLocalDateToDate, convertISODateToDate } from '../utils/ConvertDate';
+import currencyBRL from '../utils/ConvertToCurrencyBrl';
 import './TableReportPayments.css';
 
 const TableReportPayments = () => {
@@ -22,7 +23,6 @@ const TableReportPayments = () => {
       if (filter.startDate && filter.endDate) {
         const startDate = convertISODateToDate(filter.startDate);
         const endDate = convertISODateToDate(filter.endDate);
-
         const filterData = data.filter((item) => {
           const dataReport = convertLocalDateToDate(item.paymentDate);
           if (startDate <= dataReport && dataReport <= endDate) {
@@ -53,9 +53,9 @@ const TableReportPayments = () => {
                 <tr key={ index }>
                   <td>{ item.paymentDate }</td>
                   <td>{ item.fullname }</td>
-                  <td>{ item.totalValue }</td>
+                  <td>{ currencyBRL(item.totalValue) }</td>
                   <td>{ item.paymentMethod }</td>
-                  <td>{ item.value }</td>
+                  <td>{ currencyBRL(item.value) }</td>
                 </tr>
               )) }
             </tbody>
@@ -64,8 +64,8 @@ const TableReportPayments = () => {
                 <td colSpan="5">
                   <p>
                     <strong>
-                      Total a receber / recebido no período: R$&nbsp;
-                      { filteredData.reduce((prev, curr) => prev + parseFloat(curr.value), 0).toFixed(2) }
+                      Total a receber / recebido no período:&nbsp;
+                      { currencyBRL(filteredData.reduce((prev, curr) => prev + parseFloat(curr.value), 0).toFixed(2)) }
                     </strong>
                   </p>
                 </td>
@@ -76,7 +76,7 @@ const TableReportPayments = () => {
     );
 
   return (
-    <section>
+    <section className='table-report-payments__container'>
       { loading ? <p>Loading...</p> : <>{ renderTable() }</> }
     </section>
   );
