@@ -23,6 +23,7 @@ const INITIAL_MESSAGES = {
 const FormAddService = () => {
   const [service, setService] = useState(INITIAL_SERVICE);
   const [message, setMessage] = useState(INITIAL_MESSAGES);
+  const [alert, setAlert] = useState('* Todos o campos devem ser preenchidos!');
   const [btnDisabled, setBtnDisabled] = useState(true);
 
   const handleChange = ({ target: { name, value } }) => {
@@ -60,6 +61,7 @@ const FormAddService = () => {
         && service.paymentDate !== ''
       ) {
         setBtnDisabled(false);
+        setAlert('');
       } else {
         setBtnDisabled(true);
       }
@@ -70,10 +72,10 @@ const FormAddService = () => {
   return (
     <div>
       <form className='form-add-service__container'>
-        <fieldset>
-          <legend>Cadastro de serviço</legend>
+        <fieldset className='form-add-service__fieldset'>
+          <legend className='form-add-service__title'>Cadastro de serviço</legend>
           <label className='form-add-service__label' htmlFor="fullname">
-          Nome completo do paciente*:
+          Nome completo do paciente:
             <input
               className='form-add-service__input'
               type="text"
@@ -89,7 +91,7 @@ const FormAddService = () => {
           </label>
 
           <label className='form-add-service__label' htmlFor="treatment">
-            Tratamento realizado*:
+            Tratamento realizado:
             <input
               className='form-add-service__input'
               type="text"
@@ -105,7 +107,7 @@ const FormAddService = () => {
           </label>
 
           <label className='form-add-service__label' htmlFor="value">
-            Valor do tratamento realizado*:
+            Valor do tratamento realizado:
             <input
               className='form-add-service__input'
               type="number"
@@ -123,7 +125,7 @@ const FormAddService = () => {
           </label>
 
           <label className='form-add-service__label' htmlFor="paymentMethod">
-            Método de pagamento*:
+            Método de pagamento:
             <select
               className='form-add-service__select'
               id="paymentMethod"
@@ -141,7 +143,7 @@ const FormAddService = () => {
           </label>
 
           <label className='form-add-service__label' htmlFor="formOfPayment">
-            Forma de pagamento*:
+            Forma de pagamento:
             <select
               className='form-add-service__select'
               id="formOfPayment"
@@ -162,7 +164,7 @@ const FormAddService = () => {
           </label>
 
           <label className='form-add-service__label' htmlFor="paymentDate">
-            Data de pagamento*:
+            Data de pagamento:
             <input 
               className='form-add-service__input'
               type="date"
@@ -173,6 +175,8 @@ const FormAddService = () => {
             />
           </label>
           <p className='form-add-service__p'>{ message.paymentDate }</p>
+
+          { alert && <p className='form-add-service__alert'>{ alert }</p> }
 
           <button
             className='form-add-service__button'
