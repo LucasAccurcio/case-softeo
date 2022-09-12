@@ -23,17 +23,18 @@ const FilterPayments = () => {
 
   useEffect(() => {
     const initial_dates = () => {
-      let start = new Date();
-      start.setDate(1);
+      let date = new Date();
+
+      let start = new Date(date.getFullYear(), date.getMonth(), 1);
       start = start.toJSON().split('T');
       start = start[0];
       setStartDate(start);
 
-      let end = new Date();
-      end.setDate(end.getDate() + 90);
+      let end = new Date(date.getFullYear(), date.getMonth() + 3, 0);
       end = end.toJSON().split('T');
       end = end[0];
       setEndDate(end);
+
       setFilter({"startDate": start, "endDate": end});
       setLoading(true);
     }
@@ -41,12 +42,13 @@ const FilterPayments = () => {
   }, [setFilter, setLoading]);
 
   return (
-    <section>
-      <p>Selecione o período desejado:</p>
+    <section className='filter-payments__container'>
+      <p className='filter-payments__p'>Selecione o período desejado:</p>
       <div className="filter-payments__date">
         <label htmlFor="startDate" className="filter-payments__date__label">
           Data de início:
           <input
+            className='filter-payments__input'
             id="startDate"
             name="startDate"
             type="date"
@@ -57,6 +59,7 @@ const FilterPayments = () => {
         <label htmlFor="endDate" className="filter-payments__date__label">
           Data final:
           <input
+            className='filter-payments__input'
             id="endDate"
             name="endDate"
             type="date"
@@ -64,7 +67,7 @@ const FilterPayments = () => {
             onChange={ handleChange }
             />
         </label>
-        <button className="filter-payments__button__button" onClick={ handleSubmit }>Filtrar</button>
+        <button className='filter-payments__button' onClick={ handleSubmit }>Filtrar</button>
       </div>
     </section>
   );
