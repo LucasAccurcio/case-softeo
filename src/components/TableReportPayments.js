@@ -36,7 +36,9 @@ const TableReportPayments = () => {
     filterData();
   }, [filter, data, setLoading, setFilteredData]);
 
-  const renderTable = () => (
+  const renderTable = () => {
+    if (data.length > 0) {
+      return (
         <>
           <table>
             <thead>
@@ -73,7 +75,9 @@ const TableReportPayments = () => {
             </tfoot>
           </table>
       </>
-    );
+    )}
+    return <p className='no-data'>Nenhum dado encontrado</p>
+    };
 
   return (
     <section className='table-report-payments__container'>
