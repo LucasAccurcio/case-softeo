@@ -1,12 +1,21 @@
 # Softeo Tecnologia
 
-## Case: Controle de fluxo de recebíveis
+-  Projeto: Controle de fluxo de recebíveis
 
-- Projeto desenvolvido em Javascript e React.
 
 ## Objetivo do projeto:
 
 - O objetivo do projeto era desenvolver uma aplicação em React para um consultório odontológio, onde fosse possível automatizar o controle de fluxo de serviço, substituindo as anotações feitas em papel, facilitando a visualização dos pagamentos recebidos e a receber, com exibição do total para um período determinado.
+
+## Tecnologias utilizadas:
+
+- Este projeto foi desenvolvido utilizando React e JavaScript.
+- Para armazenamento dos dados, foi utilizado o localStorage do browser.
+- Para gerenciamento dos estados globais das páginas, foi utilizado o Context API.
+- Para renderização do Gráfico, foi utilizado a biblioteca React Google Charts.
+- Para os testes, foi utilizado a biblioteca React Testing Library.
+- Figma para prototipação das páginas.
+
 
 ## Deploy do projeto no Heroku:
 
