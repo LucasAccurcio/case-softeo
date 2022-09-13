@@ -22,5 +22,11 @@ describe('Verificações na página "Home"', () => {
     expect(screen.getByRole('button', { name: /Gerar relatório/i })).toBeInTheDocument();  
   });
 
+  it('deveria ter um botão "Gerenciar serviços" na página', () => {
+    render(<App />, {wrapper: MemoryRouter});
+
+    expect(screen.getByRole('button', { name: /Gerenciar serviços/i })).toBeInTheDocument();  
+  });
+
 
 });
