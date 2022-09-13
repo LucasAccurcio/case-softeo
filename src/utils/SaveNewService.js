@@ -1,9 +1,12 @@
 import { convertISODateToDate } from './ConvertDate';
 
 const saveNewService = (service) => {
+  localStorage.setItem('simplifiedService', JSON
+  .stringify([...JSON.parse(localStorage.getItem('simplifiedService')), service]));
+
   service = { ...service, totalValue: parseFloat(service.value).toFixed(2) };
   let date = convertISODateToDate(service.paymentDate);
-  
+
   if (service.paymentMethod !== 'Cartão de crédito' || service.formOfPayment === 'À vista') {
     service.paymentDate = date.toLocaleDateString('pt-BR');
     localStorage.setItem('service', JSON
