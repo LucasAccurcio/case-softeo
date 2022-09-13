@@ -36,7 +36,9 @@
 
 - Na pasta raiz do projeto, digite o comando:
 
-  * `npm test`
+  * `npm test` para rodar todos os testes.
+
+  * `npm run test:coverage` para rodar todos os testes e gerar um relatório de cobertura.
 
 ## Protótipo do projeto:
 
