@@ -1,0 +1,146 @@
+.form-edit-service__container {
+  padding: 5px 10px 2px 10px;
+}
+
+.table-list-of-service__container {
+  padding: 5px 10px 2px 10px;
+}
+
+.form-edit-service__fieldset {
+  border: #a3a2a2 solid 1px;
+  border-radius: 3.5px;
+  text-align: left;
+  margin-bottom: 5px;
+  padding: 0 10px;
+}
+
+.form-edit-service__legend {
+  color: #ffffff;
+  font-size: small;
+  margin-left: 10px;
+  text-align: left;
+}
+
+.form-edit-service__label {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: x-small;
+  width: 100%;
+}
+
+.form-edit-service__input {
+  border: none;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin: 4px 0px 2px 5px;
+  padding: 6px 6px;
+  width: 200px;
+}
+
+.form-edit-service__input:disabled {
+  background-color: #c7c7c7;
+  color: #000000;
+}
+
+.table-list-of-service {
+  border: #a3a2a2 solid 1px;
+  border-radius: 3.5px;
+  text-align: left;
+  width: 100%;
+}
+
+.thead-list-of-service {
+  font-size: x-small;
+  text-align: center;
+}
+
+.tbody-list-of-service {
+  font-size: xx-small;
+  text-align: center;
+}
+
+.tr-list-of-service:hover {
+  background-color: #225f6e;
+  cursor: pointer;
+}
+
+.form-edit-service__button-container {
+  display: flex;
+  flex-direction: row;
+  margin: 2px;
+}
+
+.button-save-service {
+  background-color: #225f6e;
+  border: solid 1px black;
+  border-radius: 10px;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: medium;
+  height: 6vh;
+  margin: 5px 2px 2px 5px;
+  width: 100%
+}
+
+.button-delete-service {
+  background-color: #225f6e;
+  border: solid 1px black;
+  border-radius: 10px;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: medium;
+  height: 6vh;
+  margin: 5px 2px 2px 5px;
+  width: 100%
+}
+
+@media screen and (min-width: 415px) and (max-width: 460px) {
+  .form-edit-service__input {
+    width: 220px;
+    padding: 8px 8px;
+  }
+
+  .form-edit-service__label {
+    font-size: small;
+  }
+}
+
+@media screen and (min-width: 461px) and (max-width: 600px) {
+  .form-edit-service__input {
+    width: 70%;
+    padding: 10px 10px;
+  }
+
+  .form-edit-service__label {
+    font-size: smaller;
+  }
+
+  .thead-list-of-service {
+    font-size: small;
+  }
+  
+  .tbody-list-of-service {
+    font-size: x-small;
+  }
+}
+
+@media screen and (min-width: 601px) {
+  .form-edit-service__input {
+    width: 75%;
+    padding: 10px 10px;
+  }
+
+  .form-edit-service__label {
+    font-size: smaller;
+  }
+
+  .thead-list-of-service {
+    font-size: smaller;
+  }
+  
+  .tbody-list-of-service {
+    font-size: small;
+  }
+}
