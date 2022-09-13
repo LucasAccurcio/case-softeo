@@ -75,7 +75,7 @@ const FormAddService = () => {
         <fieldset className='form-add-service__fieldset'>
           <legend className='form-add-service__title'>Cadastro de serviço</legend>
           <label className='form-add-service__label' htmlFor="fullname">
-          Nome completo do paciente:
+            Nome completo do paciente:
             <input
               className='form-add-service__input'
               type="text"
