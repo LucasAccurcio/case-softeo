@@ -20,10 +20,7 @@
 ## Deploys do projeto:
 
 ### Railway:
-- Abra [https://case-softeo-production.up.railway.app/](https://case-softeo-production.up.railway.app/) para visualizar em seu browser.
-
-### Heroku *(será descontinuado)*:
-- Abra [https://softeo-app.herokuapp.com/](https://softeo-app.herokuapp.com/) para visualizar em seu browser.
+- Abra [https://case-softeo-production-6ccc.up.railway.app/home](https://case-softeo-production.up.railway.app/) para visualizar em seu browser.
 
 ## Rodando a aplicação em sua máquina:
 
